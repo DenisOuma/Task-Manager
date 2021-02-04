@@ -21,7 +21,7 @@ clearBtn.addEventListener('click', function(){
     console.log(list[0].textContent)
     for(var i=0; i<list.length; i++){
         if(list[i].textContent === filter.value){
-            list[i].remove
+            list[i].remove();
         }
     }
         
