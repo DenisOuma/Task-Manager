@@ -2,7 +2,7 @@
 const taskForm = document.querySelector('.task-form');
 const clearBtn =   document.querySelector('.clear-tasks');
 const filter = document.querySelector('#filter');
-const taskList = document.querySelector('.collection ');
+const taskList = document.querySelector('.collection');
 const taskInput = document.querySelector('#task');
 
 
@@ -11,8 +11,19 @@ taskForm.addEventListener('submit',function(e) {
     if(taskInput.value === ''){
         alert('Please enter a Task!')
     }
-    const inputLi = taskInput.value;
-    taskList.innerHTML += `<li class = "task-input">${inputLi}</li><hr>`
+    const inputLi = document.createElement('li');
+    inputLi.className = 'collection-items';
+    inputLi.appendChild(document.createTextNode(taskInput.value));
+    // delete Icon
+    const deleteLink = document.createElement('a');
+    deleteLink.className = 'delete-item secondary-content';
+    deleteLink.innerHTML = '<i class = "fa fa-remove"></i>'
+    inputLi.appendChild(deleteLink);
+    taskList.appendChild(inputLi);
+    // clearing the Inputed
+    taskInput.value = '';
+
+    
     e.preventDefault()
 })
 
@@ -27,3 +38,7 @@ clearBtn.addEventListener('click', function(){
         
     
 })
+
+
+// console.log(inputLi);
+    // taskList.appendChild(inputLi);
