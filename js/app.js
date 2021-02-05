@@ -21,7 +21,7 @@ taskForm.addEventListener('submit',function(e) {
     inputLi.appendChild(deleteLink);
     taskList.appendChild(inputLi);
     // clearing the Inputed
-    taskInput.value = '';
+    taskInput.value = '';   
 
     
     e.preventDefault()
