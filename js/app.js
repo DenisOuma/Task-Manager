@@ -22,8 +22,6 @@ taskForm.addEventListener('submit',function(e) {
     taskList.appendChild(inputLi);
     // clearing the Inputed
     taskInput.value = '';   
-
-    
     e.preventDefault()
 })
 
